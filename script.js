@@ -59,6 +59,10 @@ form.addEventListener('submit', e => {
 })
 
 document.getElementById("login-btn").addEventListener("click", function(event) {
+  
   event.preventDefault(); // Prevent default form submission behavior
-  window.location.href = "https://www.instagram.com/"; // Redirect to YouTube
+   console.log("redirecting to another website");
+  setTimeout(function(){
+            window.location.href = "https://www.instagram.com/"; // Redirect to YouTube
+         },5000)
 });
