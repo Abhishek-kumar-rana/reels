@@ -45,13 +45,14 @@
                               name="Password"
                               id="password"
                               class="form-input"
-                              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                              
                               placeholder="Password"
                               title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters."
                               oninput="stateHandle()"
                               required
-                              type="password">
+                              type="text">
                           <label class="floating-label" name="Password" for="password">Password</label>
+<!--                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
                           <button id="show-btn"
                                   onclick="showPassword()"
                                   type="button">Show</button>
